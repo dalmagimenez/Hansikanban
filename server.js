@@ -35,7 +35,8 @@ if (initColumns.count === 0) {
   const insertColumn = db.prepare('INSERT INTO columns (name, position) VALUES (?, ?)');
   insertColumn.run('Por Hacer', 0);
   insertColumn.run('En Progreso', 1);
-  insertColumn.run('Completado', 2);
+  insertColumn.run('QA', 2);
+  insertColumn.run('Completado', 3);
 }
 
 app.get('/api/columns', (req, res) => {
