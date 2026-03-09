@@ -97,6 +97,11 @@ header h1 {
   transition: transform 0.15s, box-shadow 0.15s;
 }
 
+.task.column-1 { background: white; }
+.task.column-2 { background: #fff3cd; }
+.task.column-3 { background: #ffe5cc; }
+.task.column-4 { background: #d4edda; }
+
 .task:hover {
   box-shadow: 0 4px 8px rgba(9, 30, 66, 0.2);
 }

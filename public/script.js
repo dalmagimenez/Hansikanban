@@ -31,7 +31,7 @@ function renderBoard() {
     const tasksContainer = columnEl.querySelector('.tasks-container');
     columnTasks.forEach(task => {
       const taskEl = document.createElement('div');
-      taskEl.className = 'task';
+      taskEl.className = `task column-${task.column_id}`;
       taskEl.draggable = true;
       taskEl.dataset.id = task.id;
       taskEl.innerHTML = `
