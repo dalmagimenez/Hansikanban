@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: #f5f6f8;
+  min-height: 100vh;
+}
+
+.app {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: #172b4d;
+  font-size: 24px;
+}
+
+.board {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  min-height: calc(100vh - 120px);
+}
+
+.column {
+  background: #ebecf0;
+  border-radius: 8px;
+  min-width: 300px;
+  max-width: 300px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 4px;
+}
+
+.column-title {
+  font-weight: 600;
+  color: #172b4d;
+  font-size: 14px;
+}
+
+.task-count {
+  background: #dfe1e6;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  color: #5e6c84;
+}
+
+.add-task-btn {
+  background: transparent;
+  border: none;
+  color: #5e6c84;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.add-task-btn:hover {
+  background: #dadbe2;
+}
+
+.tasks-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 100px;
+}
+
+.task {
+  background: white;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(9, 30, 66, 0.15);
+  cursor: grab;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.task:hover {
+  box-shadow: 0 4px 8px rgba(9, 30, 66, 0.2);
+}
+
+.task.dragging {
+  opacity: 0.5;
+  transform: rotate(3deg);
+}
+
+.task-title {
+  font-size: 14px;
+  color: #172b4d;
+  margin-bottom: 4px;
+}
+
+.task-description {
+  font-size: 12px;
+  color: #5e6c84;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.task-delete {
+  float: right;
+  color: #eb5a46;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.task:hover .task-delete {
+  opacity: 1;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.modal-content h2 {
+  margin-bottom: 16px;
+  color: #172b4d;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 2px solid #dfe1e6;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.modal-content input:focus,
+.modal-content textarea:focus {
+  outline: none;
+  border-color: #0079bf;
+}
+
+.modal-content textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.modal-content button {
+  background: #0079bf;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.modal-content button:hover {
+  background: #026aa7;
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+  color: #5e6c84;
+}
+
+.drag-over {
+  background: #e2e4e9;
+}

@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  kanban:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - kanban-data:/app
+    restart: unless-stopped
+
+volumes:
+  kanban-data:
